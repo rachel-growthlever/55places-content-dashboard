@@ -21,7 +21,6 @@
   --text-primary: #FFFFFF;
   --text-secondary: #8D99AE;
   --text-muted: #636E80;
-  --success: #10B77F;
 }
 body {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
@@ -30,86 +29,133 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
 }
-.logo-img {
-  height: 48px;
-  margin-bottom: 1rem;
-}
-.subtitle {
-  font-family: 'Space Grotesk', sans-serif;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-}
-.clients {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 440px;
-}
-.client-card {
+
+/* Nav — mirrors growthlever.app */
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--midnight-light);
-  border: 1px solid var(--midnight-lighter);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all 0.2s ease;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
-.client-card:hover {
-  background: var(--midnight-lighter);
-  border-color: var(--coral);
-  box-shadow: 0 4px 24px rgba(255, 107, 107, 0.12);
-  transform: translateY(-2px);
-  text-decoration: none;
+.nav-logo img { height: 32px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
-.client-name {
+.nav-links a {
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-.client-desc {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text-secondary);
-  margin-top: 0.25rem;
+  text-decoration: none;
+  transition: color 0.2s;
 }
-.arrow {
-  font-size: 1.25rem;
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a.active { color: var(--text-primary); }
+.nav-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--midnight) !important;
+  background: var(--coral);
+  padding: 0.5rem 1.15rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--coral-hover); color: var(--midnight) !important; }
+
+/* Main content */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 span { color: var(--coral); }
+.hero p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.hero .email-link {
   color: var(--coral);
-  transition: transform 0.2s;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
 }
-.client-card:hover .arrow {
-  transform: translateX(4px);
+.hero .email-link:hover { border-bottom-color: var(--coral); }
+.hero .cta-btn {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--midnight);
+  background: var(--coral);
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
 }
+.hero .cta-btn:hover { background: var(--coral-hover); transform: translateY(-1px); }
+
+/* Footer */
 .footer {
-  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
   font-size: 0.75rem;
   color: var(--text-muted);
+  border-top: 1px solid var(--midnight-lighter);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .nav { padding: 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero p { font-size: 1rem; }
 }
 </style>
 </head>
 <body>
-<img src="/logo-full.png" alt="GrowthLever" class="logo-img">
-<div class="subtitle">Client Content Dashboards</div>
-<div class="clients">
-  <a href="/55places/" class="client-card">
-    <div>
-      <div class="client-name">55Places</div>
-      <div class="client-desc">55+ Active Adult Community Content — March 2026</div>
-    </div>
-    <div class="arrow">&rarr;</div>
-  </a>
+
+<!-- Nav — matches growthlever.app -->
+<nav class="nav">
+  <a href="https://growthlever.app" class="nav-logo"><img src="/logo-full.png" alt="GrowthLever"></a>
+  <div class="nav-links">
+    <a href="https://growthlever.app/about">About</a>
+    <a href="https://growthlever.app/services">Services</a>
+    <a href="https://growthlever.app/audit">Free Audit</a>
+    <a class="active" href="/">Clients</a>
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3BHMm-bB4d2pxtExODjOcPXXBuDWZ0x8Jf031ViCjCxnFs04QMuCKJT0Ltrhx4ujFplGVvywu1" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Client <span>Dashboards</span></h1>
+  <p>Looking for yours? Email <a href="mailto:rachel@growthlever.app" class="email-link">rachel@growthlever.app</a> to get set up.</p>
+  <a href="mailto:rachel@growthlever.app" class="cta-btn">Get in Touch</a>
 </div>
+
 <div class="footer">&copy; 2026 GrowthLever</div>
 </body>
 </html>
