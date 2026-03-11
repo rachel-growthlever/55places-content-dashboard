@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>55Places Content Dashboard — March 2026</title>
+<meta name="theme-color" content="#1A2332">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --red: #C54644;
@@ -31,10 +36,13 @@ a { color: var(--blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* Header */
-.header { background: var(--navy); color: white; padding: 2rem 1.5rem; }
+.header { background: #1A2332; color: white; padding: 2rem 1.5rem; }
 .header-inner { max-width: 1200px; margin: 0 auto; }
-.header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
-.header .subtitle { opacity: 0.8; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.header-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.header-brand img { height: 28px; }
+.header-brand .divider { width: 1px; height: 24px; background: rgba(255,255,255,0.2); }
+.header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header .subtitle { opacity: 0.8; font-size: 0.95rem; margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; }
 .stats-bar { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .stat { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; min-width: 100px; }
 .stat-number { font-size: 1.5rem; font-weight: 700; }
@@ -162,8 +170,9 @@ a:hover { text-decoration: underline; }
 .count-chip .count-label { font-size: 0.8rem; color: #666; }
 
 /* Footer */
-.footer { background: var(--light-gray); padding: 2rem 1.5rem; text-align: center; color: #888; font-size: 0.85rem; margin-top: 3rem; }
-.footer a { color: var(--red); }
+.footer { background: #1A2332; padding: 2rem 1.5rem; text-align: center; color: #8D99AE; font-size: 0.85rem; margin-top: 3rem; font-family: 'DM Sans', sans-serif; }
+.footer a { color: #FF6B6B; }
+.footer-logo { height: 24px; margin-bottom: 0.5rem; opacity: 0.8; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -182,6 +191,11 @@ a:hover { text-decoration: underline; }
 <!-- Header -->
 <div class="header">
   <div class="header-inner">
+    <div class="header-brand">
+      <a href="/"><img src="/logo-full.png" alt="GrowthLever"></a>
+      <div class="divider"></div>
+      <span style="font-size: 0.85rem; opacity: 0.6; font-family: 'DM Sans', sans-serif;">Client Dashboard</span>
+    </div>
     <h1>55Places Content Dashboard</h1>
     <div class="subtitle">March 2026 — Prepared by GrowthLever</div>
     <div class="stats-bar">
@@ -272,6 +286,7 @@ a:hover { text-decoration: underline; }
 
 <!-- Footer -->
 <div class="footer">
+  <img src="/logo-full.png" alt="GrowthLever" class="footer-logo"><br>
   Prepared by <a href="https://growthlever.app">GrowthLever</a> | Generated March 11, 2026<br>
   Questions? Contact your GrowthLever team.
 </div>

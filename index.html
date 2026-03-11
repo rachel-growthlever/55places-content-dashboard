@@ -3,24 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A2332">
+<link rel="icon" href="/favicon.png" type="image/png">
 <title>GrowthLever — Client Dashboards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #F9FAFB; color: #1A2B4A; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
-.logo { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-.logo span { color: #C54644; }
-.subtitle { color: #6B7280; font-size: 1rem; margin-bottom: 3rem; }
-.clients { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 400px; }
-.client-card { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 1.25rem 1.5rem; text-decoration: none; color: #1A2B4A; transition: all 0.15s; }
-.client-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #C54644; transform: translateY(-1px); text-decoration: none; }
-.client-name { font-weight: 700; font-size: 1.05rem; }
-.client-desc { font-size: 0.8rem; color: #6B7280; margin-top: 0.2rem; }
-.arrow { font-size: 1.25rem; color: #C54644; }
-.footer { margin-top: 3rem; font-size: 0.8rem; color: #9CA3AF; }
+:root {
+  --coral: #FF6B6B;
+  --coral-hover: #FF5252;
+  --yellow: #FFD96B;
+  --midnight: #1A2332;
+  --midnight-light: #253044;
+  --midnight-lighter: #2F3D56;
+  --text-primary: #FFFFFF;
+  --text-secondary: #8D99AE;
+  --text-muted: #636E80;
+  --success: #10B77F;
+}
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background: var(--midnight);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.logo-img {
+  height: 48px;
+  margin-bottom: 1rem;
+}
+.subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.clients {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 440px;
+}
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--midnight-light);
+  border: 1px solid var(--midnight-lighter);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+.client-card:hover {
+  background: var(--midnight-lighter);
+  border-color: var(--coral);
+  box-shadow: 0 4px 24px rgba(255, 107, 107, 0.12);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.client-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.client-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+.arrow {
+  font-size: 1.25rem;
+  color: var(--coral);
+  transition: transform 0.2s;
+}
+.client-card:hover .arrow {
+  transform: translateX(4px);
+}
+.footer {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
 </style>
 </head>
 <body>
-<div class="logo">Growth<span>Lever</span></div>
+<img src="/logo-full.png" alt="GrowthLever" class="logo-img">
 <div class="subtitle">Client Content Dashboards</div>
 <div class="clients">
   <a href="/55places/" class="client-card">
